@@ -5,21 +5,24 @@ html, body {
 
 h1 {
   text-align: center;
+  padding:30px;
 }
 
 .display {
   display: flex;
   justify-content: space-around;
-  border-top: 5px solid black;
-  border-bottom: 5px solid black;
-  padding: 25px
+  color:#6b6bff;
+  border-top: 5px solid #948484;
+  border-bottom: 5px solid #898080;
+  padding: 70px
 }
 
 .heading {
   display: flex;
   justify-content: space-around;
-  border-top: 5px solid black;
+  border-top: 5px solid #e7a6a6;
   background-color: rgba(76, 175, 80, 0.3)
+  
 }
 
 @media screen and (max-width: 600px) {
@@ -30,32 +33,37 @@ h1 {
 
 .display-image img {
   display: block;
-  height: 130px;
-  width: 160px;
-  padding :10px;
-  
+  height: 160px;
+  width: 100%;
+  padding:20px;
 }
 
 .display-song p {
   font-size: 18px;
   height: 100px;
+  width: 100%;
   font-weight: bold;
-  
+  text-align:center;
+  margin : 30px;
 }
 
 .display-artist p {
   font-size: 18px;
   height: 100px;
-  
+  width: 100%;
+  font-weight: bold;
+  text-align:center;
+  margin : 30px;
 }
 
 
-.display-link a {
+.display-link iframe {
   display: block;
   font-size: 18px;
   height: 100px;
+  width: 100%;
   font-weight: bold;
-  
+  margin: 30px;
 }
 
 .form {
@@ -67,22 +75,23 @@ h1 {
 input {
   padding: 5px 10px;
   font-size: 14px;
-  color: black;
+  color: #ff3300;
 }
 
 button {
   font-size: 14px;
   padding: 5px 10px;
-  color: black;
+  color: #12aff3;
 }
 
 body {
   background: url(https://i.pinimg.com/originals/b8/4f/41/b84f4195a6d33c93d01111287c0c7b7e.jpg);
-color: white;
+color: #5157fb;
 }
 
 h4{
-  color: white;
+  color: #037cd8;
 }
+
 
 

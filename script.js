@@ -22,11 +22,11 @@ let displayLink = document.querySelector(".display-link");
 
 
 // task 7: create and populate an array to store your image urls. Create three more arrays. One to store your song names, one for the artists, and a last one for the song links.
-let imageArray =
-  ["https://media.pitchfork.com/photos/649dbfb832ef0bc7a4f1ac4f/master/w_1280%2Cc_limit/Drake-Scorpion.jpg", "https://images.genius.com/05033c92156c1d3f9cc521ce500cf6cc.1000x1000x1.jpg", "savage.jpg"]
-let songNameArray = ["Emotionless","ALl Falls Down", "Red Sky"]
-let artistArray = ["Drake", "Kanye West", "21 Savage" ]
-let songLinkArray = ["https://www.youtube.com/watch?v=w4MSbajRs_Y", "https://www.youtube.com/watch?v=8kyWDhB_QeI", "https://www.youtube.com/watch?v=5_-sIkbYd_M" ]
+//let imageArray =
+//  ["https://media.pitchfork.com/photos/649dbfb832ef0bc7a4f1ac4f/master/w_1280%2Cc_limit/Drake-Scorpion.jpg", "https://images.genius.com/05033c92156c1d3f9cc521ce500cf6cc.1000x1000x1.jpg", "savage.jpg"]
+//let songNameArray = ["Emotionless","ALL Falls Down", "Red Sky"]
+//let artistArray = ["Drake", "Kanye West", "21 Savage" ]
+//let songLinkArray = ["https://www.youtube.com/watch?v=w4MSbajRs_Y", "https://www.youtube.com/watch?v=8kyWDhB_QeI", "www.youtube.com/watch?v=5_-sIkbYd_M"]
 
 
 
@@ -37,7 +37,29 @@ let songLinkArray = ["https://www.youtube.com/watch?v=w4MSbajRs_Y", "https://www
 // task 13: inside each object, add key/value pairs to store the image url, song name, artist, and song link.
 // task 14: create an array that stores all of the objects.
 
+let Drake = {
+  songUrl : "https://www.youtube.com/embed/w4MSbajRs_Y?si=F9_AZ7mvbncdKlE_",
+  artistName : "Drake",
+  SongName : "Emotionless",
+  imageUrl : 
+"https://media.pitchfork.com/photos/649dbfb832ef0bc7a4f1ac4f/master/w_1280%2Cc_limit/Drake-Scorpion.jpg"
+}
 
+let Kanye = {
+  songUrl : "https://www.youtube.com/embed/8kyWDhB_QeI?si=IFwcQBh8gT_vxED_",
+  artistName : "Kanye",
+  SongName : "All Falls Down",
+  imageUrl : "https://images.genius.com/05033c92156c1d3f9cc521ce500cf6cc.1000x1000x1.jpg"
+}
+
+let Savage = {
+  songUrl : "https://www.youtube.com/embed/5_-sIkbYd_M?si=C0-YBrW2-htADmyU",
+  artistName : "21 Savage",
+  SongName : "Red Sky",
+  imageUrl : "savage.jpg"
+}
+
+let bigArray = [Drake,Kanye,Savage];
 
 //REFACTOR LOOPS DAY 
 // task 15: update your `addSongInfo` function so the input values are saved in as values in a new object.
@@ -46,23 +68,20 @@ let songLinkArray = ["https://www.youtube.com/watch?v=w4MSbajRs_Y", "https://www
 
 
 
-
-
 function addSongInfo() {
 
 // task 9: declare a variable to save the user input of the image url. Declare three more variables that save user input: One for the song names, one for the artists, and a last one for the song links.
 
-  let inputImage = (image.value);
-  let inputSong = (songName.value);
-  let inputArtist = (artist.value);
-  let inputLink = (songLink.value);
+bigArray.push({
+               songUrl : songLink.value,
+               artistName : artist.value,
+               SongName : songName.value,
+               imageUrl : image.value
+             })
 }
 
 // task 10: use `.push()` to add each input value to the correct array.
-imageArray.push(image.value);
-songNameArray.push(songName.value);
-artistArray.push(artist.value);
-songLinkArray.push(songLink.value);
+
 
 
 /******** this function empties the display divs each time the button is clicked so that your playlist does not repeatedly add the data too many times. Where should this function be placed???********/
@@ -79,31 +98,35 @@ function emptyDisplay() {
 function displaySongInfo() {
 
 // task 8: loop through your images array and display the images to your songs in the correct div. Create three more loops. One for the song names, one for the artists, and a last one for the song links.
-  for (let i = 0; i < imageArray.length; i++) {
+  for(let i = 0; i < bigArray.length; i++) {
+   let SonG = bigArray[i] 
     let image = document.createElement('img')
-    image_src = imageArray[i]
+    image_src = SonG.imageUrl
     image.src = image_src
     displayImage.appendChild(image)
-  }
-
-  for (let i = 0; i < songNameArray.length; i++) {
+    
     let songName = document.createElement('p')
-    songName.innerHTML = songNameArray[i]
+    songName.innerHTML = SonG.SongName
     displaySong.appendChild(songName)
-  }
 
-  for (let i = 0; i < artistArray.length; i++) {
-    let artistName = document.createElement('p')
-    artistName.innerHTML = artistArray[i]
-    displayArtist.appendChild(artistName)
-  }
-
-  for (let i = 0; i < songLinkArray.length; i++) {
-    let songLink = document.createElement('p')
-    songLink.innerHTML = songLinkArray[i]
+    let songLink = document.createElement('iframe')
+    songLink.src = SonG.songUrl
     displayLink.appendChild(songLink)
-  }
-}
+
+    let songArtist = document.createElement('p')
+    songArtist.innerHTML = SonG.artistName
+    displayArtist.appendChild(songArtist)
+   
+  }}
+
+  
+
+  
+
+
+   
+  
+
 
 
 
@@ -112,6 +135,7 @@ function displaySongInfo() {
 // click event to add and display songs
 add.onclick = function() {
   addSongInfo();
+  emptyDisplay();
   displaySongInfo();
 };
 
