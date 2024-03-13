@@ -61,7 +61,7 @@ let Savage = {
 
 let Jcole = {
   songUrl : "https://www.youtube.com/embed/VMeirNg87AY?si=4-Dkx6sXISbPat2W",
-    artistName : "Jcole",
+    artistName : "J. cole",
     SongName : "Power Trip",
     imageUrl : "https://i1.sndcdn.com/artworks-8rSOMaO4gsjl-0-t500x500.jpg"
 }
