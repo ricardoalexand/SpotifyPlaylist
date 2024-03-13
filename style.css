@@ -14,13 +14,13 @@ h1 {
   color:#6b6bff;
   border-top: 5px solid #948484;
   border-bottom: 5px solid #898080;
-  padding: 70px
+  
 }
 
 .heading {
   display: flex;
   justify-content: space-around;
-  border-top: 5px solid #e7a6a6;
+  border-top: 5px solid #978787;
   background-color: rgba(76, 175, 80, 0.3)
   
 }
@@ -34,8 +34,8 @@ h1 {
 .display-image img {
   display: block;
   height: 160px;
-  width: 100%;
-  padding:20px;
+  width: 100%; 
+  padding:30px;
 }
 
 .display-song p {
@@ -44,7 +44,7 @@ h1 {
   width: 100%;
   font-weight: bold;
   text-align:center;
-  margin : 30px;
+  
 }
 
 .display-artist p {
@@ -53,7 +53,20 @@ h1 {
   width: 100%;
   font-weight: bold;
   text-align:center;
-  margin : 30px;
+}
+
+.display-song {
+  display : flex;
+  align-items:center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.display-artist{
+  display : flex;
+  align-items:center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 
@@ -81,17 +94,18 @@ input {
 button {
   font-size: 14px;
   padding: 5px 10px;
-  color: #12aff3;
+  color: #479a76;
 }
 
 body {
   background: url(https://i.pinimg.com/originals/b8/4f/41/b84f4195a6d33c93d01111287c0c7b7e.jpg);
-color: #5157fb;
+color: #4249ff;
 }
 
 h4{
-  color: #037cd8;
+  color: #99d3ff;
 }
+
 
 
 

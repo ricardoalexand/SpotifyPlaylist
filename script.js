@@ -59,7 +59,14 @@ let Savage = {
   imageUrl : "savage.jpg"
 }
 
-let bigArray = [Drake,Kanye,Savage];
+let Jcole = {
+  songUrl : "https://www.youtube.com/embed/VMeirNg87AY?si=4-Dkx6sXISbPat2W",
+    artistName : "Jcole",
+    SongName : "Power Trip",
+    imageUrl : "https://i1.sndcdn.com/artworks-8rSOMaO4gsjl-0-t500x500.jpg"
+}
+
+let bigArray = [Drake,Kanye,Savage,Jcole];
 
 //REFACTOR LOOPS DAY 
 // task 15: update your `addSongInfo` function so the input values are saved in as values in a new object.
